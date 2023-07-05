@@ -61,3 +61,30 @@
     background-color: #d00;
   }
   
+  .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+  }
+  
+  .centered-table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  .centered-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .centered-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .centered-table tr td:first-child {
+    font-weight: bold;
+    width: 150px;
+    white-space: nowrap;
+  }
+  
