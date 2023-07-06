@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Food, type: :model do
   before :each do
     @user = User.create(name: 'Test', email: 'test2@example.com', password: 'password')
-    # puts @user.errors.full_messages
     @test_food = Food.create(user: @user, name: 'test food', measurement_unit: 'unit', price: 10, quantity: 2)
   end
 
