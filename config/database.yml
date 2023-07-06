@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: recipes
-  username: postgres
-  password: 123$$$sss
+  username: microverse
+  password: 123456789
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,7 +60,7 @@ development:
 test:
   <<: *default
   database: recipes
-  username: postgres
+  username:  
   password: 123$$$sss
 
 # As with config/credentials.yml, you never want to store sensitive information,
