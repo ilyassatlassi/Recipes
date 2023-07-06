@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :foods
+  get 'recipe_foods/new'
+  get 'recipe_foods/create'
+  get 'recipe_foods/destroy'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "recipes#public"
+  resources :recipes, only: [:index, :show, :new, :create, :update, :destroy] do
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
+  resources :foods
 
-  # Defines the root path route ("/")
-  root "foods#index"
-  # get '/devise/registrations'
 end
