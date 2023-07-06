@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import url('./recipes.css');
+@import url('./recipes.css');
 
 * {
   padding: 0;
@@ -21,7 +21,14 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
 }
 
@@ -81,52 +88,29 @@ ul li {
 .btn-logout:hover {
   background-color: #d00;
 }
-  
-  .table-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-  }
-  
-  .centered-table {
-    border-collapse: collapse;
-    width: 50%;
-  }
-  
-  .centered-table td {
-    padding: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  .centered-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .centered-table tr td:first-child {
-    font-weight: bold;
-    width: 150px;
-    white-space: nowrap;
-  }
-  
-  .shopping-list-table {
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* height: 100vh; */
+}
+
+.centered-table {
   border-collapse: collapse;
   width: 50%;
 }
 
-.shopping-list-table th,
-.shopping-list-table td {
-  border: 1px solid #000;
+.centered-table td {
   padding: 8px;
+  border: 1px solid #ccc;
 }
 
-.shopping-list-table th {
+.centered-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.shopping-list-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
 .shopping-list-table {
   border-collapse: collapse;
   width: 50%;
@@ -136,6 +120,12 @@ ul li {
 .shopping-list-table td {
   border: 1px solid #000;
   padding: 8px;
+}
+
+.centered-table tr td:first-child {
+  font-weight: bold;
+  width: 150px;
+  white-space: nowrap;
 }
 
 .shopping-list-table th {
