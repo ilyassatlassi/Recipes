@@ -58,6 +58,7 @@ ul li {
 .navbar-nav {
   display: flex;
   list-style: none;
+  flex-direction: row;
 }
 
 .nav-item {
