@@ -21,5 +21,9 @@
         <%= button_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), method: :get, class: "btn btn-primary" %>
       <%end%>
     </div>
+    </div>
+      <%= render partial: 'shared/recipe_food_table', locals: { recipe_foods: @recipe.recipe_foods, user_id: @recipe.user_id } %>
+    </div>
+
   </article>
 <section>

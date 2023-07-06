@@ -46,13 +46,14 @@ ul li {
   padding: 10px;
 }
 
-.container {
+.nav-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-brand {
+.navbar-brand-white {
   font-size: 24px;
   color: #fff;
   text-decoration: none;
@@ -72,7 +73,7 @@ ul li {
   margin-right: 10px;
 }
 
-.nav-link {
+.nav-link-white{
   color: #fff;
   text-decoration: none;
 }
@@ -99,7 +100,7 @@ ul li {
 
 .centered-table {
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
 }
 
 .centered-table td {
