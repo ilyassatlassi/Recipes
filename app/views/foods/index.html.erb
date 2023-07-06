@@ -1,36 +1,38 @@
 <p style="color: green"><%= notice %></p>
-
+<section class="recipes-section">
 <h1>Foods</h1>
+<div class="new-recipe-link">
+    <%= link_to "New food", new_recipe_path, class: 'link' %>
+  </div>
 
 <div class="table-container">
   <table class="centered-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurement unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>User</th>
+      </tr>
+    </thead>
     <tbody>
       <% @foods.each_with_index do |food, index| %>
         <tr <%= "class='gray-row'" if index.odd? %>>
-          <td><strong>Name:</strong></td>
           <td><%= food.name %></td>
-        </tr>
-        <tr <%= "class='gray-row'" if index.odd? %>>
-          <td><strong>Measurement unit:</strong></td>
           <td><%= food.measurement_unit %></td>
-        </tr>
-        <tr <%= "class='gray-row'" if index.odd? %>>
-          <td><strong>Price:</strong></td>
           <td><%= food.price %></td>
-        </tr>
-        <tr <%= "class='gray-row'" if index.odd? %>>
-          <td><strong>Quantity:</strong></td>
           <td><%= food.quantity %></td>
-        </tr>
-        <tr <%= "class='gray-row'" if index.odd? %>>
-          <td><strong>User:</strong></td>
           <td><%= food.user_id %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+ </section>
 
 
 
-<%= link_to "New food", new_food_path %>
+
+
+

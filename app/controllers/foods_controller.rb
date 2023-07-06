@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ show edit update destroy ]
+  # before_action :set_food, only: %i[ show edit update destroy ]
 
   # GET /foods or /foods.json
   def index
@@ -34,4 +34,5 @@ class FoodsController < ApplicationController
     def food_params
       params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
     end
+
 

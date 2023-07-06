@@ -16,7 +16,8 @@
     </div>
     <div class="show-recipe-btns-wrapper">
       <% if user_signed_in? && current_user.id == @recipe.user_id %>
-        <button class="btn btn-primary">Generate shopping list</button>
+        <%# <button class="btn btn-primary">Generate shopping list</button> %>
+        <%= button_to "Generate shopping list", shopping_lists_path, method: :get, class: "btn btn-primary" %>
         <%= button_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), method: :get, class: "btn btn-primary" %>
       <%end%>
     </div>
