@@ -7,7 +7,6 @@ describe User, type: :model do
 
   let(:test_user) { User.create(name:, email:, password:) }
 
-
   it 'User model field should be equal to test user' do
     expect(test_user.name).to eq(name)
     expect(test_user.email).to eq(email)
