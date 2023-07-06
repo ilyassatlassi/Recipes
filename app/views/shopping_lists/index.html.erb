@@ -1,2 +1,39 @@
-<h1>ShoppingLists#index</h1>
-<p>Find me in app/views/shopping_lists/index.html.erb</p>
+<div class="center-container">
+  <% if @missing_foods.any? %>
+    <% @total_items = @missing_foods.length %>
+    <% @missing_foods = @missing_foods.map do |food_hash|
+      Food.new(food_hash)
+    end %>
+    <% @total_price = 0 %>
+    <% @missing_foods.each do |missing_food|
+      if missing_food.price.present? && missing_food.quantity.present?
+        @total_price += missing_food.price.to_f * missing_food.quantity.to_i
+      end
+    end %>
+    <div class="total-missing">
+      <p><strong>Total Missing Food Items:</strong> <%= @total_items %> </p>
+      <p><strong>Total Price of Missing Food:</strong> <%= number_to_currency(@total_price, unit: '$') %></p>
+    </div>
+
+    <table class="shopping-list-table">
+      <thead>
+        <tr>
+          <th>Food Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @missing_foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.quantity %></td>
+            <td><%= food.price.present? && food.quantity.present? ? food.price * food.quantity : '' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No missing food items.</p>
+  <% end %>
+</div>
