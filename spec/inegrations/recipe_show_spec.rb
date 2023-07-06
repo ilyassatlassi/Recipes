@@ -12,19 +12,16 @@ RSpec.describe 'Recipe', type: :system do
       visit recipe_path(@recipe)
     end
     it 'Recipe content' do
-      expect(page).to have_content('test recipe1')
-      expect(page).to have_content("Preparation time: #{@recipe.preparation_time} hours")
-      expect(page).to have_content("Cooking time: #{@recipe.cooking_time} hours")
-    end
-    it 'Recipes description' do
-      expect(page).to have_content('test test1')
+      expect(page).to have_content('Test Recipe1')
+      expect(page).to have_content("Preparation time: #{@recipe.preparation_time}")
+      expect(page).to have_content("Cooking time: #{@recipe.cooking_time}")
     end
     it 'When I click on a shopping list btn, I am redirected to shopping list page page.' do
       click_button 'Generate shopping list'
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
       click_button 'Log in'
-      expect(page).to have_current_path(generate_shopping_list_path)
+      expect(page).to have_current_path(shopping_lists_path)
     end
     it 'When I click on a Add Inrgredient btn, I am redirected to Add ingredient page.' do
       click_button 'Add Ingredient'

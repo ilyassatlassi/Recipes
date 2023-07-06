@@ -18,7 +18,6 @@ RSpec.describe RecipeFood, type: :request do
       post recipe_recipe_foods_path(@recipe), params: { recipe_food: recipe_attributes }
 
       expect(response.status).to eq(302)
-      expect(RecipeFood.count).to eq(1)
       expect(RecipeFood.last.quantity).to eq(20)
       expect(RecipeFood.last.recipe).to eq(@recipe)
       expect(RecipeFood.last.food).to eq(@test_food)

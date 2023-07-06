@@ -18,10 +18,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :foods, except: [:update]
-  resources :recipes, except: [:update] do
-    resources :foods, only: [:new, :create, :destroy]
+  resources :recipes, only: [:index, :show, :new, :create, :update, :destroy] do
     resources :recipe_foods, only: [:new, :create, :destroy]
-    patch 'toggle_public', on: :member
   end
 
   # resources :public_recipes, except: [:update]

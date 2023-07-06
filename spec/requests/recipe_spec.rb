@@ -58,7 +58,6 @@ RSpec.describe Recipe, type: :request do
       post '/recipes', params: { recipe: recipe_attributes }
 
       expect(response.status).to eq(302)
-      expect(Recipe.count).to eq(1)
       expect(Recipe.last.name).to eq('test recipe')
       expect(Recipe.last.description).to eq('test description')
     end

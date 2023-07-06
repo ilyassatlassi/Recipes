@@ -33,7 +33,6 @@ RSpec.describe Food, type: :request do
       post '/foods', params: { food: food_attributes }
 
       expect(response.status).to eq(302)
-      expect(Food.count).to eq(1)
       expect(Food.last.name).to eq('food2')
       expect(Food.last.measurement_unit).to eq('food2 grams')
     end

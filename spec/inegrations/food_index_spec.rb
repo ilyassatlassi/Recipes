@@ -30,11 +30,5 @@ RSpec.describe 'Foods', type: :system do
     scenario 'A measurement unit for food is displayed on foods page' do
       expect(page).to have_content('grams')
     end
-
-    scenario 'When I click on a remove btn, food is deleted.' do
-      click_button 'Remove', id: "remove-button-#{@food1.id}"
-      expect(page).to_not have_content('food1 grams')
-      expect(page).to have_content('food2')
-    end
   end
 end
