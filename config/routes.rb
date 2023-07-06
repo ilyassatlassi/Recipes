@@ -14,6 +14,8 @@
 Rails.application.routes.draw do
   devise_for :users
   get "recipes/public", to: "recipes#public", as: "public_recipes"
+  get "foods/new", to: "foods#new", as: "new_foods"
+
 
   resources :users, only: [:show]
 
