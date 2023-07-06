@@ -9,11 +9,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.includes(:user, :recipe_foods).where(public: true).order(created_at: :desc)
   end
 
-
   def show
     @recipe = Recipe.where(id: params[:id]).first
   end
-  
+
   def new
     @recipe = Recipe.new
   end
@@ -21,7 +20,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-    
+
     if @recipe.save
       redirect_to recipes_path, notice: 'Recipe was successfully created'
     else

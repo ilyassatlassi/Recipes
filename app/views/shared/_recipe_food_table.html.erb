@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <% if user_signed_in? && current_user.id == user_id %>
+      <th>Action</th>
+      <%end%>
+    </tr>
+  </thead>
+  <tbody>
+  <% recipe_foods.each do |recipe_food|%>
+    <tr>
+      <td><%=recipe_food.food.name%></td>
+      <td><%="#{recipe_food.quantity} #{recipe_food.food.measurement_unit}"%></td>
+      <td><%=recipe_food.quantity * recipe_food.food.price%></td>
+      <% if user_signed_in? && current_user.id == user_id %>
+      <td>
+        <div class="d-flex mb-3">
+          <%= button_to "Remove", recipe_recipe_food_path(recipe_food.recipe, recipe_food), method: :delete, class: "btn btn-primary ms-3"%>
+        </div>
+      </td>
+      <%end%>
+    </tr>
+  <%end%>
+  </tbody>
+</table>

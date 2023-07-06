@@ -24,6 +24,5 @@ RSpec.describe 'Recipe', type: :system do
       click_link 'test recipe1'
       expect(page).to have_current_path(recipe_path(@recipe))
     end
-    
   end
 end
