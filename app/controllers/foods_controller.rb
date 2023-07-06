@@ -26,13 +26,12 @@ class FoodsController < ApplicationController
     @food = current_user.foods.find(params[:id])
     @food.destroy
     redirect_to foods_path, notice: 'Food item was successfully deleted.'
-    end
   end
+end
 
   private
-    # Only allow a list of trusted parameters through.
-    def food_params
-      params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
-    end
 
-
+# Only allow a list of trusted parameters through.
+def food_params
+  params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
+end
