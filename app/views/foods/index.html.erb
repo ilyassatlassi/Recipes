@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+<section class="recipes-section">
+<div class="new-recipe-link">
+    <%= link_to "New food", new_foods_path, class: 'link' %>
+  </div>
+
+<div class="table-container">
+  <table class="centered-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurement unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each_with_index do |food, index| %>
+        <tr <%= "class='gray-row'" if index.odd? %>>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.user_id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+ </section>
+
+
+
+
+
+

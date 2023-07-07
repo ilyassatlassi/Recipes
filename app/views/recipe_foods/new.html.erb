@@ -1,0 +1,15 @@
+<%= form_with model:([@recipe, @recipe_food]) do |form|%>
+<h1 class="text-center mb-3">Add Food in Recipe</h1>
+
+<div class="mb-3">
+  <%= form.label :food_id, class: "form-label" %>
+  <%= form.collection_select :food_id, current_user.foods.all, :id, :name , {}, class: "form-select"%>
+</div>
+
+<div class="mb-3">
+<%=form.label :quantity, class: "form-label"%>
+<%=form.number_field :quantity, class: "form-control"%>
+</div>
+
+<%=form.submit "Create", class: "btn btn-primary"%>
+<%end%>

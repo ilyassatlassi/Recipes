@@ -1,0 +1,21 @@
+<section class="recipes-section">
+  <div class="new-recipe-link">
+    <%= link_to "New recipe", new_recipe_path, class: 'btn btn-primary' %>
+  </div>
+  <article class="section">
+    <p style="color: green"><%= notice %></p>
+    <div id="recipes">
+      <% @recipes.each do |recipe| %>
+        <div class="recipe-card">
+          <div class="recipe-header">
+            <h2 class="recipe-title">
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            </h2>
+            <%= button_to "Remove", recipe_path(recipe), method: :delete, class: ['btn btn-danger']%>
+          </div>
+          <p><%= recipe.description %></p>
+        </div>
+      <% end %>
+    </div>
+  </article>
+</section>

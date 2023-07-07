@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('./recipes.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand-white {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.linkWrapper {
+  display: flex;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link-white {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-logout {
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #d00;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* height: 100vh; */
+}
+
+.centered-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.centered-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.centered-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.shopping-list-table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.shopping-list-table th,
+.shopping-list-table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.centered-table tr td:first-child {
+  font-weight: bold;
+  width: 150px;
+  white-space: nowrap;
+}
+
+.shopping-list-table th {
+  background-color: #f2f2f2;
+}
+
+.shopping-list-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  height: 105vh;
+}
+
+.total-missing {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}

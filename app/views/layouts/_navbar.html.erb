@@ -1,0 +1,41 @@
+<nav class="navbar">
+    <div class="nav-container container">
+      <%= link_to "Foody", foods_path, class: "navbar-brand-white" %>
+      <div class="linkWraper">
+        <ul class="navbar-nav">
+         <% if user_signed_in? %>
+         <li class="nav-item">
+            <%= link_to "Public Recipes", public_recipes_path, class: "nav-link-white" %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Foods', foods_path, class: "nav-link-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Recipes', recipes_path, class: "nav-link-white" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Shoping list', shopping_lists_path, class: "nav-link-white" %>
+          </li>
+          
+          <li class="nav-item">
+            <%= form_for(current_user, url: destroy_user_session_path, method: :delete, html: { class: "" }) do |f| %>
+              <%= f.submit "Logout", class: "btn btn-warning" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Public Recipes", public_recipes_path, class: "nav-link-white" %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Register", new_user_registration_path, class: "nav-link-white" %>
+          </li>
+        <% end %>
+
+        </ul>
+      </div>
+    </div>
+  </nav>

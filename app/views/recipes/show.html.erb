@@ -1,0 +1,29 @@
+<section class="show-recipe-section">
+  <article>
+    <h1 class="show-recipe-title">
+      <%= @recipe.name %>
+    </h1>
+    <div class="show-recipe-info">
+      <div>
+        <p> Preparation time: <%= @recipe.preparation_time %> </p>
+        <p> Cooking time: <%= @recipe.cooking_time %> </p>
+      </div>
+      <div>
+        <% if user_signed_in? && current_user.id == @recipe.user_id %>
+          <%= render 'shared/toggle_btn', recipe: @recipe%>
+        <%end%>
+      </div>
+    </div>
+    <div class="show-recipe-btns-wrapper">
+      <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <%# <button class="btn btn-primary">Generate shopping list</button> %>
+        <%= button_to "Generate shopping list", shopping_lists_path, method: :get, class: "btn btn-primary" %>
+        <%= button_to "Add Ingredient", new_recipe_recipe_food_path(@recipe), method: :get, class: "btn btn-primary" %>
+      <%end%>
+    </div>
+    </div>
+      <%= render partial: 'shared/recipe_food_table', locals: { recipe_foods: @recipe.recipe_foods, user_id: @recipe.user_id } %>
+    </div>
+
+  </article>
+<section>
